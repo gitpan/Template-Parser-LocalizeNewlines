@@ -3,10 +3,10 @@ NAME
     Template::Parser that fixes bad newlines
 
 DESCRIPTION
-    Template::Parser would seem to have a problem in that PRE_CHOMP and
-    friends only work on local newlines. If a Template Toolkit instance on a
-    Unix host encounters DOS newlines in a Template, it will fail to chomp
-    the newline correctly.
+    Template::Parser has a problem with PRE_CHOMP and related options. They
+    only work on local newlines. If a Template Toolkit instance on a Unix
+    host encounters DOS newlines in a Template, it will fail to chomp the
+    newline correctly, with potentially disasterous results.
 
     Template::Parser::LocalizeNewlines is a drop-in replacement that behaves
     EXACTLY the same (and is a subclass of) as a normal parser, except that
@@ -21,21 +21,21 @@ METHODS
     This module is identical to Template::Parser.
 
 SUPPORT
-    Module not implemented, there's nothing to be broken. But if you have
-    installation problems, submit them to the CPAN bug tracker.
+    Bugs should be reported via the following link.
 
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Template%3A%3AParser%3A%
-    3ALocalizeNewlines>
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Template-Parser-Localize
+    Newlines>
 
-    For other issues, contact the designer
+    For other issues, contact the author.
 
-AUTHORS
-    Adam Kennedy (Maintainer), <http://ali.as/>, cpan@ali.as
+AUTHOR
+    Adam Kennedy <adamk@cpan.org>
 
 COPYRIGHT
-    Copyright (c) 2004 Adam Kennedy. All rights reserved. This program is
-    free software; you can redistribute it and/or modify it under the same
-    terms as Perl itself.
+    Copyright 2004 - 2008 Adam Kennedy.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
     The full text of the license can be found in the LICENSE file included
     with this module.

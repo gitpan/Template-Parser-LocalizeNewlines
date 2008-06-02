@@ -1,23 +1,15 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 # Load testing for Template::Parser::LocalizeNewlines
 
 use strict;
-use lib ();
-use UNIVERSAL 'isa';
-use File::Spec::Functions ':ALL';
 BEGIN {
-	$| = 1;
-	unless ( $ENV{HARNESS_ACTIVE} ) {
-		require FindBin;
-		chdir ($FindBin::Bin = $FindBin::Bin); # Avoid a warning
-		lib->import( catdir( updir(), updir(), 'modules') );
-	}
+	$|  = 1;
+	$^W = 1;
 }
 
-use Test::More tests => 1;
+use Test::More tests => 2;
 
-# Does the module load
+ok( $] >= 5.005, 'Perl version is new enough' );
+
 use_ok('Template::Parser::LocalizeNewlines');
-
-exit(0);

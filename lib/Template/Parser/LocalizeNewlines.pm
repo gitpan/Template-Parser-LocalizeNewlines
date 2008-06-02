@@ -9,12 +9,12 @@ fixes bad newlines
 
 =head1 DESCRIPTION
 
-Template::Parser would seem to have a problem in that PRE_CHOMP and friends
+L<Template::Parser> has a problem with PRE_CHOMP and related options. They
 only work on local newlines. If a Template Toolkit instance on a Unix host
 encounters DOS newlines in a Template, it will fail to chomp the newline
-correctly.
+correctly, with potentially disasterous results.
 
-Template::Parser::LocalizeNewlines is a drop-in replacement that behaves
+B<Template::Parser::LocalizeNewlines> is a drop-in replacement that behaves
 EXACTLY the same (and is a subclass of) as a normal parser, except that
 before it goes to parse the template content, it applies the newline
 localisation regex describes in L<http://ali.as/devel/newlines.html>.
@@ -26,12 +26,13 @@ along to the constructor.
 
 =cut
 
+use 5.005;
 use strict;
 use base 'Template::Parser';
 
 use vars qw{$VERSION};
 BEGIN {
-	$VERSION = '0.01';
+	$VERSION = '1.04';
 }
 
 # The only method we need to change
@@ -56,20 +57,20 @@ This module is identical to L<Template::Parser>.
 
 =head1 SUPPORT
 
-Module not implemented, there's nothing to be broken. But if you have
-installation problems, submit them to the CPAN bug tracker.
+Bugs should be reported via the following link.
 
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Template%3A%3AParser%3A%3ALocalizeNewlines>
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Template-Parser-LocalizeNewlines>
 
-For other issues, contact the designer
+For other issues, contact the author.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
-Adam Kennedy (Maintainer), L<http://ali.as/>, cpan@ali.as
+Adam Kennedy E<lt>adamk@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2004 Adam Kennedy. All rights reserved.
+Copyright 2004 - 2008 Adam Kennedy.
+
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
 
